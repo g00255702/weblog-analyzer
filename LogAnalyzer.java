@@ -56,6 +56,22 @@ public class LogAnalyzer
         }
         return busiest;
     }
+    
+    /**
+     * Return the number of quietestHour over a year
+     */
+    public int quietestHour()
+    {
+        int quietest = 0;
+        for(int hour = 0; hour < hourCounts.length; hour++)
+        {
+            if(hourCounts[hour] < hourCounts[quietest])
+            {
+                quietest = hour;
+            }
+        }
+        return quietest;
+    }
 
     /**
      * Analyze the hourly access data from the log file.
