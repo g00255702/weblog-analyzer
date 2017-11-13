@@ -40,6 +40,22 @@ public class LogAnalyzer
         return total;
         
     }
+    
+    /**
+     * Return the number of busietHour over a year
+     */
+    public int busiestHour()
+    {
+        int busiest = 0;
+        for(int hour = 0; hour < hourCounts.length; hour++)
+        {
+            if(hourCounts[busiest] < hourCounts[hour])
+            {
+                busiest = hour;
+            }
+        }
+        return busiest;
+    }
 
     /**
      * Analyze the hourly access data from the log file.
